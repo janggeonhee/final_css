@@ -8,7 +8,7 @@
 <h1>
 	Hello world!  
 </h1>
-<!-- 테스트으 -->
+<!-- 테스트토토토토 -->
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
