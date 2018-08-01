@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BorderMapper">
+	<resultMap type="Border" id="BorderMap">
+		<id property="boardKey" column="B_KEY"/>
+		<result property="companyKey" column="C_KEY_FK"/>
+		<result property="bTitle" column="B_TITLE"/>
+		<result property="bContent" column="B_CONTENT"/>
+		<result property="bWriter" column="B_WRITER"/>
+		<result property="bCount" column="B_COUNT"/>
+		<result property="bDate" column="B_DATE"/>
+		<result property="bCateGory" column="B_CATEGORY"/>
+	</resultMap>
+	
+	<select id="BorderListSelect" resultMap="BorderMap">
+		SELECT * FROM BOARD WHERE B_CATEGORY = #{bCateGory}
+	</select>
+	
+</mapper>

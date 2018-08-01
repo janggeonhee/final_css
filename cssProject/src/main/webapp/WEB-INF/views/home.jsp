@@ -46,6 +46,7 @@ desired effect
     <section class="content-header">
       <h1>
         Page Header
+        <a href="borderList.do">게시판</a>
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
