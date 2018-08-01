@@ -5,10 +5,11 @@
 <head>
 <meta  charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" style="padding-top: 0 ">
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">

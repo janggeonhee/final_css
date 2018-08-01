@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE >
+<!DOCTYPE>
 <html>
 <head>
-<meta  charset="UTF-8">
+<meta charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
- <!-- Main Footer -->
+	
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Company Support Service
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>CSS &copy; 2018 <a href="#">장대리이거해줘</a>.</strong> All rights reserved.
   </footer>
 </body>
 </html>
