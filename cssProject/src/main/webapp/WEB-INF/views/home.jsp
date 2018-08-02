@@ -52,13 +52,9 @@ desired effect
     <section class="content-header">
       <h1>
         Page Header
-        <form action="borderList.do" method="get">
-            	게시판 종류 입력 :=== <input type="text" name="bCateGory"/>
-            	<input type="submit" value="전송"/>
-        </form>
-        
         <button onclick="boardPage('공지사항');">공지사항</button>
-        <button onclick="boardPage('자유게시판');">자유게시판</button>
+        <button onclick="boardPage('자유 게시판');">자유게시판</button>
+        <button onclick="boardPage('경조사');">경조사</button>
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">

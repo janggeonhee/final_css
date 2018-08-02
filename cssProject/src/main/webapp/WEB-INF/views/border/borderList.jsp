@@ -32,6 +32,11 @@
 <style>
 
 </style>
+<script>
+	function boardForm(){
+		location.href="borderForm.do?bCateGory=${bCateGory}";
+	}
+</script>
 </head>
 <body>
 
@@ -40,7 +45,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">공지사항</h3>
+            
+              <h3 class="box-title">
+              </h3>
+            
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -66,14 +74,15 @@
                 <c:forEach items="${list }" var="b">
                 <tr>
                   <td><c:out value="${b.boardKey }"/></td>
-                  <td><c:out value="${b.bWriter }"/></td>
+                  <td><c:out value="${b.eName }"/></td>
                   <td><c:out value="${b.bTitle }"/></td>
                   <td><span class="label label-danger"><c:out value="${b.bCount }"/></span></td>
                   <td><c:out value="${b.bContent }"/></td>
                   <td><c:out value="${b.bDate }"/></td>
                 </tr>
                 </c:forEach>
-              </table>
+              </table>   
+              	<button onclick="boardForm();">작성</button>
             </div>
             <!-- /.box-body -->
           </div>

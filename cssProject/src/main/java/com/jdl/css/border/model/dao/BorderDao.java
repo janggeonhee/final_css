@@ -15,8 +15,12 @@ public class BorderDao {
 	private SqlSessionTemplate sqlSession;
 
 	public List<BorderVo> borderListSelect(String bCateGory) {
-		System.out.println("dao" + bCateGory);
 		return sqlSession.selectList("BorderMapper.BorderListSelect", bCateGory);
+	}
+
+	public int writeBoard(BorderVo board) {
+		System.out.println("dao" + board);
+		return sqlSession.insert("BorderMapper.WriteBoard", board);
 	}
 
 	

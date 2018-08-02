@@ -1,6 +1,7 @@
 package com.jdl.css.border.model.vo;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -15,13 +16,14 @@ public class BorderVo {
 	private int bCount; //조회수
 	private Date bDate; //작성일
 	private String bCateGory; //게시판 종류
+	private String eName; //작성자이름
 	
 	public BorderVo(){
 		
 	}
 
 	public BorderVo(int boardKey, String companyKey, String bTitle, String bContent, String bWriter, int bCount,
-			Date bDate, String bCateGory) {
+			Date bDate, String bCateGory, String eName) {
 		this.boardKey = boardKey;
 		this.companyKey = companyKey;
 		this.bTitle = bTitle;
@@ -30,6 +32,15 @@ public class BorderVo {
 		this.bCount = bCount;
 		this.bDate = bDate;
 		this.bCateGory = bCateGory;
+		this.eName = eName;
+	}
+
+	public String geteName() {
+		return eName;
+	}
+
+	public void seteName(String eName) {
+		this.eName = eName;
 	}
 
 	public int getBoardKey() {
@@ -100,7 +111,8 @@ public class BorderVo {
 	public String toString() {
 		return "BorderVo [boardKey=" + boardKey + ", companyKey=" + companyKey + ", bTitle=" + bTitle + ", bContent="
 				+ bContent + ", bWriter=" + bWriter + ", bCount=" + bCount + ", bDate=" + bDate + ", bCateGory="
-				+ bCateGory + "]";
+				+ bCateGory + ", eName=" + eName + "]";
 	}
+
 
 }

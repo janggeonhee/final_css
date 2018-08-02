@@ -15,8 +15,12 @@ public class BorderService {
 	BorderDao dao;
 
 	public List<BorderVo> getNoticeList(String bCateGory) {
-		System.out.println("service" + bCateGory);
 		return dao.borderListSelect(bCateGory);
+	}
+
+	public int writeBoard(BorderVo board){
+		System.out.println("service" + board);
+		return dao.writeBoard(board);
 	}
 
 

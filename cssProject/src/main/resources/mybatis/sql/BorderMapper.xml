@@ -12,12 +12,17 @@
 		<result property="bCount" column="B_COUNT"/>
 		<result property="bDate" column="B_DATE"/>
 		<result property="bCateGory" column="B_CATEGORY"/>
+		<result property="eName" column="E_NAME"/>
 	</resultMap>
 	
 	<select id="BorderListSelect" parameterType="string" resultMap="BorderMap">
-		SELECT b.B_KEY, b.B_TITLE, b.B_CONTENT, b.B_COUNT, b.B_DATE, b.B_CATEGORY ,e.E_NAME 
-		FROM BOARD b JOIN EMPLOYEE e on (b.B_WRITER_FK = e.E_KEY)
-		WHERE B_CATEGORY = #{bCateGory}
+		SELECT b.B_KEY, b.B_TITLE, b.C_KEY_FK, b.B_CONTENT, b.B_COUNT, b.B_DATE, b.B_CATEGORY ,e.E_NAME 
+		FROM BOARD b 
+		JOIN EMPLOYEE e on (b.B_WRITER_FK = e.E_KEY)
 	</select>
+	
+	<insert id="WriteBoard" parameterType="Border">
+		INSERT INTO BOARD VALUES (BOARD_SEQ.NEXTVAL, #{companyKey}, #{bTitle}, #{bContent}, #{bWriter}, 0, SYSDATE, #{bCateGory})
+	</insert>
 	
 </mapper>
