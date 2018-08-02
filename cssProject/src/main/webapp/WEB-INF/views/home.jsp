@@ -53,7 +53,7 @@ desired effect
       <h1>
         Page Header
         <form action="borderList.do" method="get">
-            	게시판 종류 입력 : <input type="text" name="bCateGory"/>
+            	게시판 종류 입력 :=== <input type="text" name="bCateGory"/>
             	<input type="submit" value="전송"/>
         </form>
         
