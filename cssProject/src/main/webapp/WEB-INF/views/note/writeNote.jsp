@@ -17,9 +17,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   
   <script>
-  	function selectE(name){
-  		console.log("실행");
-  		$("#to").text(name);
+  		var names = new Array();
+  	function select(name){
+  		
+  		names.push(name);
+  		console.log(names);
+  		$("#to").val(names.join(", "));
   	}
   </script>
  
@@ -68,23 +71,64 @@ desired effect
     <!-- Main content -->
     <section class="content container-fluid">
 <div class="row">
-        <div class="col-md-3">
-          <a href="mailbox.html" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
-
-          <div class="form-group" >
-                  <label>Select Multiple</label>
-                  <select multiple class="form-control" style="height:520px;" id="sendSelect">
-                  	<optgroup label="부서1">
-	                    <option ><a href="#" onclick="selectE(option);">option 1</a></option>
-	                    <option >option 2</option>
-	                    <option >option 3</option>
-	                    <option >option 4</option>
-	                    <option >option 5</option>
-                    </optgroup>
-                  </select>
+       <div class="col-md-6" style="width: 200px;">
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">수신자 선택</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <div class="box-group" id="accordion">
+                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                <div class="panel box box-primary">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        부서1
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="box-body" onclick="select('test1');" style="cursor: pointer;">
+                    	test1
+                    </div>
+                    <div class="box-body" onclick="select('test2');" style="cursor: pointer;">
+                    	test2
+                    </div>
+                  </div>
                 </div>
-          
-        
+                <div class="panel box box-danger">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        부서2
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="box-body">
+                     	test2
+                    </div>
+                  </div>
+                </div>
+                <div class="panel box box-success">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        부서3
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="box-body">
+                      test3
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -96,36 +140,13 @@ desired effect
             <!-- /.box-header -->
             <div class="box-body">
               <div class="form-group">
-                <input class="form-control" placeholder="To:" id="to">
+                <input class="form-control" placeholder="To:" id="to" >
               </div>
               <div class="form-group">
                 <input class="form-control" placeholder="Subject:">
               </div>
               <div class="form-group">
                     <textarea id="compose-textarea" class="form-control" style="height: 300px">
-                      <h1><u>Heading Of Message</u></h1>
-                      <h4>Subheading</h4>
-                      <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                        was born and I will give you a complete account of the system, and expound the actual teachings
-                        of the great explorer of the truth, the master-builder of human happiness. No one rejects,
-                        dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know
-                        how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
-                        is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
-                        but because occasionally circumstances occur in which toil and pain can procure him some great
-                        pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise,
-                        except to obtain some advantage from it? But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that
-                        produces no resultant pleasure? On the other hand, we denounce with righteous indignation and
-                        dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
-                        blinded by desire, that they cannot foresee</p>
-                      <ul>
-                        <li>List item one</li>
-                        <li>List item two</li>
-                        <li>List item three</li>
-                        <li>List item four</li>
-                      </ul>
-                      <p>Thank you,</p>
-                      <p>John Doe</p>
                     </textarea>
               </div>
               <div class="form-group">
