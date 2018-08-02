@@ -14,8 +14,10 @@ public class BorderDao {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
-	public List<BorderVo> borderListSelect() {
-		return sqlSession.selectList("BorderMapper.BorderListSelect");
+	public List<BorderVo> borderListSelect(String bCateGory) {
+		System.out.println("dao" + bCateGory);
+		return sqlSession.selectList("BorderMapper.BorderListSelect", bCateGory);
 	}
+
 	
 }

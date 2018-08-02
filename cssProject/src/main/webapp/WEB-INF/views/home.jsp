@@ -12,6 +12,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 2 | Starter</title>
+  
+  <script>
+  	function boardPage(bType){
+  		location.href="borderList.do?bCateGory=" + bType;
+  	}
+  </script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -41,12 +47,18 @@ desired effect
   
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="height: 100%;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Page Header
-        <a href="borderList.do">게시판</a>
+        <form action="borderList.do" method="get">
+            	게시판 종류 입력 : <input type="text" name="bCateGory"/>
+            	<input type="submit" value="전송"/>
+        </form>
+        
+        <button onclick="boardPage('공지사항');">공지사항</button>
+        <button onclick="boardPage('자유게시판');">자유게시판</button>
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">

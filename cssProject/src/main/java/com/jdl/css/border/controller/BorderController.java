@@ -17,9 +17,9 @@ public class BorderController {
 	BorderService borderservice;
 	
 	@RequestMapping("borderList.do")
-	public ModelAndView boaderList(BorderVo bodrder, ModelAndView mv){
+	public ModelAndView boaderList(String bCateGory, ModelAndView mv){
 		
-		List<BorderVo> list = borderservice.getNoticeList();
+		List<BorderVo> list = borderservice.getNoticeList(bCateGory);
 		if(list != null){
 			mv.addObject("list", list);
 			mv.setViewName("border/borderList");

@@ -14,7 +14,10 @@ public class BorderService {
 	@Autowired
 	BorderDao dao;
 
-	public List<BorderVo> getNoticeList() {
-		return dao.borderListSelect();
+	public List<BorderVo> getNoticeList(String bCateGory) {
+		System.out.println("service" + bCateGory);
+		return dao.borderListSelect(bCateGory);
 	}
+
+
 }
