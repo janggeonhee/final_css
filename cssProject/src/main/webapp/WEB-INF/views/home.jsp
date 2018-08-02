@@ -60,6 +60,8 @@ desired effect
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+        <a href="loginForm.do">로그인하러가기</a>
+        <a href="approvalPage.do">전자결재페이지가기</a>
 
     </section>
     <!-- /.content -->
