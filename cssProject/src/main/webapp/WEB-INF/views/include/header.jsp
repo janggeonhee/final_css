@@ -7,7 +7,6 @@
 <title>Insert title here</title>
  <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="resources/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -31,6 +30,7 @@
 	<!-- AdminLTE App -->
 	<script src="resources/dist/js/adminlte.min.js"></script>
 	<!-- REQUIRED JS SCRIPTS -->
+  <link rel="stylesheet" href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
 <!-- Main Header -->
