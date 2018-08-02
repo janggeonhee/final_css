@@ -39,7 +39,6 @@ desired effect
 	<c:import url="include/left_column.jsp"/>
   
   
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -73,5 +72,6 @@ desired effect
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+<P>  The time on the server is ${serverTime}. 111</P>
 </body>
 </html>
