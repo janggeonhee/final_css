@@ -50,6 +50,7 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
     	<button onclick="note()">쪽지기능 고고씽</button>
+    	<a href="loginForm.do">로그인 고고씽</a>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>

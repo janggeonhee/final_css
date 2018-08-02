@@ -23,6 +23,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   		names.push(name);
   		console.log(names);
   		$("#to").val(names.join(", "));
+  		
+  		$("#receive").val(names);
   	}
   </script>
  
@@ -89,10 +91,10 @@ desired effect
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="box-body" onclick="select('test1');" style="cursor: pointer;">
+                    <div class="box-body" onclick="select('1');" style="cursor: pointer;">
                     	test1
                     </div>
-                    <div class="box-body" onclick="select('test2');" style="cursor: pointer;">
+                    <div class="box-body" onclick="select('2');" style="cursor: pointer;">
                     	test2
                     </div>
                   </div>
@@ -139,14 +141,17 @@ desired effect
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+            <form action="sendNote.do" method="get">
+            	<input type="hidden" value ="${sessionScope.user.eKey}" name="snSenderFk"/>
+            	<input type="hidden" value="" name="receive" id="receive"/>
               <div class="form-group">
-                <input class="form-control" placeholder="To:" id="to" >
+                <input class="form-control" placeholder="To:" id="to"  name="receive">
               </div>
               <div class="form-group">
-                <input class="form-control" placeholder="Subject:">
+                <input class="form-control" placeholder="Subject:" name="snTitle">
               </div>
               <div class="form-group">
-                    <textarea id="compose-textarea" class="form-control" style="height: 300px">
+                    <textarea id="compose-textarea" class="form-control" style="height: 300px" name="snContent">
                     </textarea>
               </div>
               <div class="form-group">
@@ -160,11 +165,11 @@ desired effect
             <!-- /.box-body -->
             <div class="box-footer">
               <div class="pull-right">
-                <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Draft</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> 전송</button>
               </div>
-              <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> Discard</button>
+              <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> 취소</button>
             </div>
+            </form>
             <!-- /.box-footer -->
           </div>
           <!-- /. box -->
