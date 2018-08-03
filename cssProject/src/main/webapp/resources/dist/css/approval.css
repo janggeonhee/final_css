@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+.sign_type1_inline .sign_tit_wrap .sign_tit {
+	display: table-cell;
+	vertical-align: middle;
+	height: 129px;
+	width: 20px;
+	padding: 0 2px;
+	text-align: center;
+	background: #eee;
+	border: 1px solid #000;
+	word-break: break-all;
+	white-space: normal;
+}
+
+.sign_type1_inline .sign_member_wrap .sign_member {
+	width: 80px;
+	height: 130px;
+	border: 1px solid #000;
+	vertical-align: top;
+	margin: 0 -1px 0 0;
+	display: table;
+	table-layout: fixed;
+}
+
+.sign_type1_inline .sign_member_wrap .sign_member .sign_rank,
+	.sign_type1_inline .sign_member_wrap .sign_member .sign_wrap,
+	.sign_type1_inline .sign_member_wrap .sign_member .sign_date {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 80px;
+}
+
+.sign_type1_inline .sign_member_wrap .sign_member .sign_wrap {
+	height: 75px;
+	border-top: 1px solid #000;
+}
+
+.sign_type1_inline .sign_tit_wrap, .sign_type1_inline .sign_member_wrap
+	{
+	vertical-align: top;
+	background: #fff;
+	margin-bottom: -1px !important;
+	float: left;
+}
+
+.sign_type1_inline .sign_member_wrap .sign_member .sign_rank_wrap,
+	.sign_type1_inline .sign_member_wrap .sign_member .sign_date_wrap {
+	display: table-row;
+}
+
+.sign_type1_inline .sign_rank, .sign_type1_inline .sign_name,
+	.sign_type1_inline .sign_position, .sign_type1_inline .sign_type,
+	.sign_type1_inline .sign_date {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 80px;
+	font-family: malgun gothic,dotum,arial,tahoma;
+	font-size: 12px;
+}
+
+.sign_type1_inline .sign_member_wrap .sign_member .sign_date {
+	height: 26px;
+	border-top: 1px solid #000;
+}
+
+.sign_tit{
+	font-size: 12px;
+}

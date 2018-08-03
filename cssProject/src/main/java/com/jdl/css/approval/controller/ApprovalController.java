@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jdl.css.approval.model.service.ApprovalService;
 import com.jdl.css.approval.model.vo.ApprovalVo;
+import com.jdl.css.approval.model.vo.DjqanrldksVo;
 import com.jdl.css.employee.model.vo.EmployeeVo;
 
 @Controller
@@ -24,6 +25,11 @@ public class ApprovalController {
 		return "approval/approvalPage";
 	}
 	
+	@RequestMapping("djqanrldksPage.do")
+	public String openDjqanrldksPage(){
+		return "approval/approvalForm/djqanrldks";
+	}
+	
 	@RequestMapping("selectDraftApprovalList.do")
 	public ModelAndView selectDraftApprovalList(ModelAndView mv,HttpSession session){
 		EmployeeVo user = (EmployeeVo) session.getAttribute("user");
@@ -32,6 +38,12 @@ public class ApprovalController {
 		mv.addObject("draftList", draftList);
 		mv.setViewName("");
 		return mv;
+	}
+	
+	@RequestMapping("writeDjqanrldks.do")
+	public void writeDjqanrldks(HttpSession session,DjqanrldksVo app){
+		EmployeeVo user = (EmployeeVo) session.getAttribute("user");
+		
 	}
 
 }

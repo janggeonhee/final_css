@@ -42,14 +42,14 @@
 
 			<!-- Sidebar Menu -->
 			<ul class="sidebar-menu" data-widget="tree">
-				<li class="header">결재문서작성하기</li>
+				<li class="header">새 결재 진행</li>
 				<!-- Optionally, you can add icons to the links -->
 				<li class="treeview"><a href="#"><i class="fa fa-link"></i>
-						<span>결재문서작성</span> <span class="pull-right-container"> <i
+						<span>결재문서양식</span> <span class="pull-right-container"> <i
 							class="fa fa-angle-left pull-right"></i>
 					</span> </a>
 					<ul class="treeview-menu">
-						<li><a href="#">기안서</a></li>
+						<li><a href="djqanrldksPage.do">업무기안</a></li>
 						<li><a href="#">경조사휴가계</a></li>
 						<li><a href="#">발주서</a></li>
 						<li><a href="#">지출결의서</a></li>
