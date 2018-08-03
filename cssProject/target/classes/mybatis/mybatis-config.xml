@@ -9,9 +9,11 @@
 	</settings>
   <typeAliases>
 <!--   	<typeAlias type="com.jdl.css.test.TestVo" alias="Test"/> -->
+	 <typeAlias type="com.jdl.css.employee.model.vo.EmployeeVo" alias="EmployeeVo"/>
   </typeAliases>
 
   <mappers>
 <!--     <mapper resource="mybatis/sql/testMapper.xml"/> -->
+ <mapper resource="mybatis/sql/employeeMapper.xml" /> 
   </mappers>
 </configuration>

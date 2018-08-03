@@ -29,5 +29,18 @@
 		<include refid="select"></include>
 		WHERE E_ID = #{eId}
 	</select>
+	
+	<insert id="insertEmployee" parameterType="EmployeeVo">
+INSERT INTO EMPLOYEE
+(E_KEY,  E_NO, E_TYPE, E_ID,  E_PWD, 
+E_NAME, E_ADDRESS, E_EXTEN, E_PHONE, E_EMAIL,
+ E_BIRTH, E_HIRE_DATE, E_PHOTO)
+VALUES (SEQ_EMPLOYEE.NEXTVAL,  #{eNo}, 'A' , #{eId}, #{ePwd}, 
+	#{eName}, #{eAddress} , #{eExten}, #{ePhone}, #{eEmail}, 
+	  #{eBirth}, #{eHireDate}, 'aa' )
+</insert>
+	
+	
+	
 
 </mapper>

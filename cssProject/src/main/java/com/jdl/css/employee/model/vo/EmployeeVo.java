@@ -2,6 +2,7 @@ package com.jdl.css.employee.model.vo;
 
 import java.sql.Date;
 
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,6 +21,7 @@ public class EmployeeVo {
     private int eExten;
     private String ePhone;
     private String eEmail;
+    private Date eBirth;
     private Date eHireDate;
     private Date eEntDate;
     private char eEntYn;
@@ -30,8 +32,9 @@ public class EmployeeVo {
 	}
 
 	public EmployeeVo(int eKey, String eNo, int cKeyFk, char eType, String eId, String ePwd, String eName,
-			int eJobcodeFk, int eDepartFk, String eAddress, int eExten, String ePhone, String eEmail, Date eHireDate,
-			Date eEntDate, char eEntYn, String ePhoto) {
+			int eJobcodeFk, int eDepartFk, String eAddress, int eExten, String ePhone, String eEmail, Date eBirth,
+			Date eHireDate, Date eEntDate, char eEntYn, String ePhoto) {
+		super();
 		this.eKey = eKey;
 		this.eNo = eNo;
 		this.cKeyFk = cKeyFk;
@@ -45,6 +48,7 @@ public class EmployeeVo {
 		this.eExten = eExten;
 		this.ePhone = ePhone;
 		this.eEmail = eEmail;
+		this.eBirth = eBirth;
 		this.eHireDate = eHireDate;
 		this.eEntDate = eEntDate;
 		this.eEntYn = eEntYn;
@@ -155,6 +159,14 @@ public class EmployeeVo {
 		this.eEmail = eEmail;
 	}
 
+	public Date geteBirth() {
+		return eBirth;
+	}
+
+	public void seteBirth(Date eBirth) {
+		this.eBirth = eBirth;
+	}
+
 	public Date geteHireDate() {
 		return eHireDate;
 	}
@@ -192,9 +204,11 @@ public class EmployeeVo {
 		return "EmployeeVo [eKey=" + eKey + ", eNo=" + eNo + ", cKeyFk=" + cKeyFk + ", eType=" + eType + ", eId=" + eId
 				+ ", ePwd=" + ePwd + ", eName=" + eName + ", eJobcodeFk=" + eJobcodeFk + ", eDepartFk=" + eDepartFk
 				+ ", eAddress=" + eAddress + ", eExten=" + eExten + ", ePhone=" + ePhone + ", eEmail=" + eEmail
-				+ ", eHireDate=" + eHireDate + ", eEntDate=" + eEntDate + ", eEntYn=" + eEntYn + ", ePhoto=" + ePhoto
-				+ "]";
+				+ ", eBirth=" + eBirth + ", eHireDate=" + eHireDate + ", eEntDate=" + eEntDate + ", eEntYn=" + eEntYn
+				+ ", ePhoto=" + ePhoto + "]";
 	}
+
+	
     
     
 }

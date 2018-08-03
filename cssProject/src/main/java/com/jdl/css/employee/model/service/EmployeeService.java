@@ -15,4 +15,8 @@ public class EmployeeService {
 	public EmployeeVo selectEmployeeById(String eId) {
 		return dao.selectEmployeeById(eId);
 	}
+
+	public int insertMember(EmployeeVo member) {
+		return dao.insertMember(member);
+	}
 }

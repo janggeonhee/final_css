@@ -16,4 +16,9 @@ public class EmployeeDao {
 		return sqlSession.selectOne("EmployeeMapper.selectEmployeeById", eId);
 	}
 
+	public int insertMember(EmployeeVo member) {
+		
+		return sqlSession.insert("EmployeeMapper.insertEmployee",member);
+	}
+
 }

@@ -51,14 +51,18 @@ padding: 0 100px;
 
 <script type="text/javascript">
 
-function add(){
-	location.href="organizationChart.do";
+
+function memberJoin(){
+	$("#joinForm").submit();	
+	
 }
+
+
 
 function validate(){
 	
-	
-	
+	$("#eAddress").val($("#eAddress1").val()+","+$("#eAddress2").val())
+
 }
 
 </script>
@@ -97,14 +101,14 @@ function validate(){
               <div class="form-group" style="width:200px">
               
                   <label>사원번호</label>
-                  <input type="text" class="form-control"  name="memberNo" >
+                  <input type="text" class="form-control"  name="eNo" >
                  
                 
                 </div>
                 <div class="form-group" style="width:200px">
               
                   <label>아이디</label>
-                  <input type="text" class="form-control"  name="memberId" >
+                  <input type="text" class="form-control"  name="eId" >
                  
                 
                 </div>
@@ -114,7 +118,7 @@ function validate(){
                
        
                   <label>사원이름</label>
-                  <input type="text" class="form-control" name="memberName" >
+                  <input type="text" class="form-control" name="eName" >
                 
               
                   
@@ -125,13 +129,13 @@ function validate(){
                 
                 <div class="form-group"style="width:200px;">
                   <label for="exampleInputPassword1">비밀번호</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="memberPwd" >
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="ePwd" >
                 </div>
                 
                 <div class="form-group"style="width:200px;">
                 <label>부서</label>
-                 <input type="hidden" name="jobcode" id="jobcode"/>
-                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="jobcode1" id="jobcode1">
+                 <input type="hidden" name="eJobcodeFk" id="eJobcodeFk" value="1"/>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" >
                   <option selected="selected">임원</option>
                   <option>경영지원팀</option>
                   <option>현장서비스팀</option>
@@ -140,8 +144,8 @@ function validate(){
               </div>
                 <div class="form-group"style="width:200px;">
                 <label>직급</label>
-                 <input type="hidden" name="depart" id="depart"/>
-                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="depart1" id="depart1">
+                 <input type="hidden" name="eDepartFk" id="eDepartFk" value="1"/>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" >
                   <option selected="selected">사원</option>
                   <option>대리</option>
                   <option>과장</option>
@@ -154,7 +158,7 @@ function validate(){
                 
   				<div class="form-group">
                   <label for="exampleInputFile">사원 사진</label>
-                 <input type="file" name="filename" onchange="fileCheck(this)" accept="image/gif, image/jpeg, image/png"/ name="memberPhoto" >
+                 <input type="file" onchange="fileCheck(this)" accept="image/gif, image/jpeg, image/png"/ name="ePhoto" >
 
                 </div>
              
@@ -163,15 +167,15 @@ function validate(){
               <label>사원주소</label>
               <div class="input-group"style="width:400px;">
               
-              <input type="hidden" name="memberAddress" id="memberAddress"/>
+              <input type="hidden" name="eAddress" id="eAddress" />
               
-                <input type="text" class="form-control" name="memberAddress1" id="memberAddress1">
+                <input type="text" class="form-control" id="eAddress1"/>
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-block btn-default">주소찾기</button>
                     </span>
                     </div>
                     <div class="input-group" style="width:300px; margin-bottom:15px;">
-                  <input type="text" class="form-control" name="memberAddress2" id="memberAddress2">
+                  <input type="text" class="form-control"id="eAddress2"/>
                   </div>
                 <div class="form-group" style="width:250px;">
                 <label>내선번호</label>
@@ -180,7 +184,8 @@ function validate(){
                   <div class="input-group-addon">
                     <i class="fa fa-phone"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="exten" >
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="eExten"  value="11">
+                  
                 </div>
                 <!-- /.input group -->
               </div>
@@ -191,14 +196,14 @@ function validate(){
                   <div class="input-group-addon">
                     <i class="fa fa-phone"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="memberPhone" >
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="ePhone" >
                 </div>
                 <!-- /.input group -->
               </div>
               
               <div class="input-group" style="margin-bottom:15px;">
                   <label for="exampleInputEmail1">이메일 주소</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="memberEmail" >
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="eEmail" >
                 </div>
                 
                 <div class="form-group" style="width:250px;">
@@ -208,7 +213,8 @@ function validate(){
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" name="birth" >
+                  <input type="text" class="form-control pull-right" id="datepicker" name="eBirth1">
+                  
                 </div>
                 <!-- /.input group -->
               </div>
@@ -220,7 +226,7 @@ function validate(){
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker" name="hireDate" >
+                  <input type="text" class="form-control pull-right" id="datepicker2" name="eHireDate1" >
                 </div>
                 <!-- /.input group -->
               </div>
@@ -233,7 +239,8 @@ function validate(){
               <!-- /.box-body -->
 
               <div class="box-footer" style="text-align:center;">
-                <button type="submit" class="btn btn-primary"  onclick="add();">등록하기</button>
+                <button class="btn btn-primary" id="joinBtn" onclick="memberJoin();" >등록하기</button>
+                
               </div>
             </form>
           </div>
@@ -279,11 +286,14 @@ function fileCheck(obj) {
 
 //Date picker
 $('#datepicker').datepicker({
-	format: 'yyyy/mm/dd',
+	format: 'yyyy-mm-dd',
   autoclose: true
 })
 
-
+$('#datepicker2').datepicker({
+	format: 'yyyy-mm-dd',
+  autoclose: true
+})
 
 
 
