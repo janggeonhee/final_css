@@ -16,14 +16,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="resources/bower_components/morris.js/morris.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="resources/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="resources/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="resources/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- jQuery UI 1.11.4 -->
 <script src="resources/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <style>
-
+ td.day, th.dow, th.datepicker-switch{
+ 	color:white;
+ }
 </style>
 </head>
 <!--
@@ -70,7 +68,7 @@ desired effect
 
     <!-- Main content -->
     <section class="content container-fluid">
-	<div class="box box-info" style="width:50%;">
+	<div class="box box-info" style="width:50%; height:375.19px;">
             <div class="box-header with-border">
               <h3 class="box-title">CSS 이용회원</h3>
 
@@ -84,36 +82,19 @@ desired effect
             <!-- /.box-body -->
     </div>
 	
-	<!-- Calendar -->
-          <div class="box box-solid bg-green-gradient">
+	          <!-- Calendar -->
+          <div class="box box-solid bg-green-gradient" style="width:49%; margin-left:10px; margin-right:0;">
             <div class="box-header">
               <i class="fa fa-calendar"></i>
 
               <h3 class="box-title">Calendar</h3>
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <!-- button with a dropdown -->
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i></button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Add new event</a></li>
-                    <li><a href="#">Clear events</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View calendar</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                </button>
-              </div>
-              <!-- /. tools -->
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
               <!--The calendar -->
-              <div id="calendar" style="width: 100%"></div>
+              <div id="calendar" style="width: 100%">
+              
+              </div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer text-black">
@@ -160,6 +141,7 @@ desired effect
             </div>
           </div>
           <!-- /.box -->
+
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
@@ -181,14 +163,12 @@ desired effect
      <!-- Morris.js charts -->
 <script src="resources/bower_components/raphael/raphael.min.js"></script>
 <script src="resources/bower_components/morris.js/morris.min.js"></script>
-<!-- daterangepicker -->
-<script src="resources/bower_components/moment/min/moment.min.js"></script>
-<script src="resources/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="resources/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="resources/dist/js/pages/dashboard.js"></script>
 <script>
+ $(function(){
+	 $('#calendar').datepicker(); 
+ });
   $(function () {
     "use strict";
 
