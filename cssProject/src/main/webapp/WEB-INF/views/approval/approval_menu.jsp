@@ -42,7 +42,7 @@
 
 			<!-- Sidebar Menu -->
 			<ul class="sidebar-menu" data-widget="tree">
-				<li class="header">HEADER</li>
+				<li class="header">결재문서작성하기</li>
 				<!-- Optionally, you can add icons to the links -->
 				<li class="treeview"><a href="#"><i class="fa fa-link"></i>
 						<span>결재문서작성</span> <span class="pull-right-container"> <i
@@ -57,16 +57,12 @@
 						<li><a href="#">품의서</a></li>
 						<li><a href="#">휴가계</a></li>
 					</ul></li>
-				<li><a href="#"><i class="fa fa-link"></i> <span>Another
-							Link</span></a></li>
-				<li class="treeview"><a href="#"><i class="fa fa-link"></i>
-						<span>Multilevel</span> <span class="pull-right-container">
-							<i class="fa fa-angle-left pull-right"></i>
-					</span> </a>
-					<ul class="treeview-menu">
-						<li><a href="#">Link in level 2</a></li>
-						<li><a href="#">Link in level 2</a></li>
-					</ul></li>
+				<li class="header">결재하기</li>
+				<li><a href="#"><i class="fa fa-link"></i> <span>결재대기</span></a></li>
+				<li><a href="#"><i class="fa fa-link"></i> <span>결재예정</span></a></li>
+				<li class="header">결재문서함</li>
+				<li><a href="#"><i class="fa fa-link"></i> <span>기안문서함</span></a></li>
+				<li><a href="#"><i class="fa fa-link"></i> <span>결재문서함</span></a></li>
 			</ul>
 			<!-- /.sidebar-menu -->
 		</section>
