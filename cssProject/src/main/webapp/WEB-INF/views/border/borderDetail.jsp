@@ -12,7 +12,8 @@
 <link href="resources/Js/summernote.css" rel="stylesheet">
 <script src="resources/Js/summernote.js"></script>
 <script type="resources/Js/summernote-ko-KR.js"></script>
-<script type="text/javascript">
+<script type="resources/Js/summernote-ko-KR.js"></script>
+	<script type="text/javascript">
 	$(function() {
 	  $('#summernote').summernote({
 		  height: 600,
@@ -20,19 +21,17 @@
 	  });
 	});
 	function border(){
-		location.href="borderList.do?bCateGory=${board.bCateGory}";
+		location.href="borderList.do?bType=${board.bType}";
 	}
-</script>
+	</script>
 </head>
 <body>
-<c:out value="${board.bCateGory}"/>작성<br>
-<form action="writeBoard.do" method="post" enctype="multipart/form-data">
-<input type="hidden" name="bCateGory" value="<c:out value="${board.bCateGory}"/>"/>
-<input type="hidden" name="companyKey" value='<c:out value="${user.cKeyFk}"></c:out>'>
-<input type="hidden" name="bWriter" value='<c:out value="${user.eKey }"></c:out>'>
-제목 : <input type="text" name="bTitle"/>
-내용 : <textarea id="summernote" name="bContent"></textarea>
-<input type="submit" value="작성"/>
+
+<form action="updateBorder.do" method="post" enctype="multipart/form-data">
+<input type="hidden" name=boardKey value="<c:out value='${board.boardKey }' />">
+제목 : <input type="text" name="bTitle" value="${board.bTitle }"/>
+내용 : <textarea id="summernote" name="bContent">${board.bContent }</textarea>
+<input type="submit" value="수정"/>
 <input type="button" value="취소" onclick="border();"/>
 </form>
 

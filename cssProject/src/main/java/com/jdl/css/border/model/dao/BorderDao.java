@@ -19,8 +19,15 @@ public class BorderDao {
 	}
 
 	public int writeBoard(BorderVo board) {
-		System.out.println("dao" + board);
 		return sqlSession.insert("BorderMapper.WriteBoard", board);
+	}
+
+	public BorderVo selectBoard(int boardKey) {
+		return sqlSession.selectOne("BorderMapper.BorderSelect", boardKey);
+	}
+
+	public int updateBoard(BorderVo border) {
+		return sqlSession.update("BorderMapper.BorderUpdate", border);
 	}
 
 	

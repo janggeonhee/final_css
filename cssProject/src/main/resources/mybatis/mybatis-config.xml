@@ -9,9 +9,11 @@
 	</settings>
   <typeAliases>
   	<typeAlias type="com.jdl.css.border.model.vo.BorderVo" alias="Border"/>
+  	<typeAlias alias="Employee" type="com.jdl.css.employee.model.vo.EmployeeVo"/>
   </typeAliases>
 
   <mappers>
 	 <mapper resource="mybatis/sql/BorderMapper.xml"/> 
+	 <mapper resource="mybatis/sql/employeeMapper.xml"/>
   </mappers>
 </configuration>

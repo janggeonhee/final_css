@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="resources/Js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="resources/bower_components/font-awesome/css/font-awesome.min.css">
@@ -33,10 +34,23 @@
 
 </style>
 <script>
+$(function(){
+	$(".box-body td").mouseenter(function(){
+		$(this).parent().css("background","darkgray");
+		$(this).parent().css("cursor","pointer");
+	}).mouseout(function(){
+		$(this).parent().css("background","#94a1ba");
+	}).click(function(){
+		var boardNo = $(this).parent().children().eq(0).text();
+		location.href = "selectBoard.do?boardKey=" + boardNo; 		
+	});
+});
+
 	function boardForm(){
 		location.href="borderForm.do?bCateGory=${bCateGory}";
 	}
 </script>
+
 </head>
 <body>
 
@@ -68,7 +82,6 @@
                   <th>작성자</th>
                   <th>글제목</th>
                   <th>조회수</th>
-                  <th>글내용</th>
                   <th>작성일</th>
                 </tr>
                 <c:forEach items="${list }" var="b">
@@ -77,7 +90,6 @@
                   <td><c:out value="${b.eName }"/></td>
                   <td><c:out value="${b.bTitle }"/></td>
                   <td><span class="label label-danger"><c:out value="${b.bCount }"/></span></td>
-                  <td><c:out value="${b.bContent }"/></td>
                   <td><c:out value="${b.bDate }"/></td>
                 </tr>
                 </c:forEach>

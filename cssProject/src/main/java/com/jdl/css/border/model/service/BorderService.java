@@ -19,8 +19,15 @@ public class BorderService {
 	}
 
 	public int writeBoard(BorderVo board){
-		System.out.println("service" + board);
 		return dao.writeBoard(board);
+	}
+
+	public BorderVo selectBoard(int boardKey) {
+		return dao.selectBoard(boardKey);
+	}
+
+	public int updateBoard(BorderVo border) {
+		return dao.updateBoard(border);
 	}
 
 

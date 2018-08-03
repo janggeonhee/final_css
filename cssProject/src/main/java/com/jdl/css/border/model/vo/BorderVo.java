@@ -12,17 +12,18 @@ public class BorderVo {
 	private String companyKey; //회사키
 	private String bTitle; //게시글 제목
 	private String bContent; //글내용
-	private String bWriter; //작성자
+	private int bWriter; //작성자키
 	private int bCount; //조회수
 	private Date bDate; //작성일
 	private String bCateGory; //게시판 종류
 	private String eName; //작성자이름
+	private int bType;
 	
 	public BorderVo(){
 		
 	}
 
-	public BorderVo(int boardKey, String companyKey, String bTitle, String bContent, String bWriter, int bCount,
+	public BorderVo(int boardKey, String companyKey, String bTitle, String bContent, int bWriter, int bCount,
 			Date bDate, String bCateGory, String eName) {
 		this.boardKey = boardKey;
 		this.companyKey = companyKey;
@@ -35,12 +36,14 @@ public class BorderVo {
 		this.eName = eName;
 	}
 
-	public String geteName() {
-		return eName;
+	
+	
+	public int getbType() {
+		return bType;
 	}
 
-	public void seteName(String eName) {
-		this.eName = eName;
+	public void setbType(int bType) {
+		this.bType = bType;
 	}
 
 	public int getBoardKey() {
@@ -75,11 +78,11 @@ public class BorderVo {
 		this.bContent = bContent;
 	}
 
-	public String getbWriter() {
+	public int getbWriter() {
 		return bWriter;
 	}
 
-	public void setbWriter(String bWriter) {
+	public void setbWriter(int bWriter) {
 		this.bWriter = bWriter;
 	}
 
@@ -107,12 +110,19 @@ public class BorderVo {
 		this.bCateGory = bCateGory;
 	}
 
+	public String geteName() {
+		return eName;
+	}
+
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+
 	@Override
 	public String toString() {
 		return "BorderVo [boardKey=" + boardKey + ", companyKey=" + companyKey + ", bTitle=" + bTitle + ", bContent="
 				+ bContent + ", bWriter=" + bWriter + ", bCount=" + bCount + ", bDate=" + bDate + ", bCateGory="
 				+ bCateGory + ", eName=" + eName + "]";
 	}
-
 
 }
