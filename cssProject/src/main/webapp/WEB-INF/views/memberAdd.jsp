@@ -55,6 +55,12 @@ function add(){
 	location.href="organizationChart.do";
 }
 
+function validate(){
+	
+	
+	
+}
+
 </script>
 
 
@@ -84,14 +90,21 @@ function add(){
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" action="insertMember.do"  onsubmit="return validate();">
             
               <div class="box-body">
               
               <div class="form-group" style="width:200px">
               
                   <label>사원번호</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" class="form-control"  name="memberNo" >
+                 
+                
+                </div>
+                <div class="form-group" style="width:200px">
+              
+                  <label>아이디</label>
+                  <input type="text" class="form-control"  name="memberId" >
                  
                 
                 </div>
@@ -101,7 +114,7 @@ function add(){
                
        
                   <label>사원이름</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="memberName" >
                 
               
                   
@@ -111,13 +124,14 @@ function add(){
                 
                 
                 <div class="form-group"style="width:200px;">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" >
+                  <label for="exampleInputPassword1">비밀번호</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="memberPwd" >
                 </div>
                 
                 <div class="form-group"style="width:200px;">
                 <label>부서</label>
-                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                 <input type="hidden" name="jobcode" id="jobcode"/>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="jobcode1" id="jobcode1">
                   <option selected="selected">임원</option>
                   <option>경영지원팀</option>
                   <option>현장서비스팀</option>
@@ -126,7 +140,8 @@ function add(){
               </div>
                 <div class="form-group"style="width:200px;">
                 <label>직급</label>
-                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                 <input type="hidden" name="depart" id="depart"/>
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true" name="depart1" id="depart1">
                   <option selected="selected">사원</option>
                   <option>대리</option>
                   <option>과장</option>
@@ -139,7 +154,7 @@ function add(){
                 
   				<div class="form-group">
                   <label for="exampleInputFile">사원 사진</label>
-                 <input type="file" name="filename" onchange="fileCheck(this)" accept="image/gif, image/jpeg, image/png"/>
+                 <input type="file" name="filename" onchange="fileCheck(this)" accept="image/gif, image/jpeg, image/png"/ name="memberPhoto" >
 
                 </div>
              
@@ -148,13 +163,15 @@ function add(){
               <label>사원주소</label>
               <div class="input-group"style="width:400px;">
               
-                <input type="text" class="form-control">
+              <input type="hidden" name="memberAddress" id="memberAddress"/>
+              
+                <input type="text" class="form-control" name="memberAddress1" id="memberAddress1">
                     <span class="input-group-btn">
                       <button type="button" class="btn btn-block btn-default">주소찾기</button>
                     </span>
                     </div>
-                    <div class="input-group" style="width:300px;">
-                  <input type="text" class="form-control" >
+                    <div class="input-group" style="width:300px; margin-bottom:15px;">
+                  <input type="text" class="form-control" name="memberAddress2" id="memberAddress2">
                   </div>
                 <div class="form-group" style="width:250px;">
                 <label>내선번호</label>
@@ -163,7 +180,7 @@ function add(){
                   <div class="input-group-addon">
                     <i class="fa fa-phone"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="">
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="exten" >
                 </div>
                 <!-- /.input group -->
               </div>
@@ -174,15 +191,27 @@ function add(){
                   <div class="input-group-addon">
                     <i class="fa fa-phone"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="">
+                  <input type="text" class="form-control" data-inputmask="&quot;mask&quot;: &quot;(999) 9999-9999&quot;" data-mask="" name="memberPhone" >
                 </div>
                 <!-- /.input group -->
               </div>
               
-              <div class="input-group">
+              <div class="input-group" style="margin-bottom:15px;">
                   <label for="exampleInputEmail1">이메일 주소</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="memberEmail" >
                 </div>
+                
+                <div class="form-group" style="width:250px;">
+                <label>생년월일</label>
+
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" class="form-control pull-right" id="datepicker" name="birth" >
+                </div>
+                <!-- /.input group -->
+              </div>
               
               <div class="form-group" style="width:250px;">
                 <label>입사일</label>
@@ -191,7 +220,7 @@ function add(){
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
+                  <input type="text" class="form-control pull-right" id="datepicker" name="hireDate" >
                 </div>
                 <!-- /.input group -->
               </div>
