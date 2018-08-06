@@ -17,7 +17,13 @@ public class NoteService {
 	}
 
 	public int insertReceiveNote(NoteVo note) {
-		return dao.insertReceiveNote(note);
+		int result = 0;
+		for(Integer i : note.getReceiveNo()){
+			note.setReceiver(i);
+			result = dao.insertReceiveNote(note);			
+		}
+		return result;
 	}
+
 
 }

@@ -2,6 +2,7 @@ package com.jdl.css.note.model.vo;
 
 import java.sql.Date;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,9 @@ public class NoteVo {
 	private Date snWriteDate;
 	private char snDeleteYn;
 	
-	private String[] receive;
+	private List<String> receive;
+	private List<Integer> receiveNo;
+	private int receiver;
 	public NoteVo() {
 	}
 
@@ -67,26 +70,37 @@ public class NoteVo {
 		this.snDeleteYn = snDeleteYn;
 	}
 
-	public String[] getReceive() {
+	public List<String> getReceive() {
 		return receive;
 	}
 
-	public void setReceive(String[] receive) {
+	public void setReceive(List<String> receive) {
 		this.receive = receive;
+	}
+
+	public List<Integer> getReceiveNo() {
+		return receiveNo;
+	}
+
+	public void setReceiveNo(List<Integer> receiveNo) {
+		this.receiveNo = receiveNo;
+	}
+	
+	public int getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(int receiver) {
+		this.receiver = receiver;
 	}
 
 	@Override
 	public String toString() {
 		return "NoteVo [snKey=" + snKey + ", snSenderFk=" + snSenderFk + ", snTitle=" + snTitle + ", snContent="
-				+ snContent + ", snWriteDate=" + snWriteDate + ", snDeleteYn=" + snDeleteYn + ", receive="
-				+ Arrays.toString(receive) + "]";
+				+ snContent + ", snWriteDate=" + snWriteDate + ", snDeleteYn=" + snDeleteYn + ", receive=" + receive
+				+ ", receiveNo=" + receiveNo + ", receiver=" + receiver + "]";
 	}
-	
-	
-	
 
-
-	
 	
 	
 }

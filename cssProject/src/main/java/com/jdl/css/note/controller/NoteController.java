@@ -31,19 +31,14 @@ public class NoteController {
 	@RequestMapping("sendNote.do")
 	public ModelAndView sendNote(NoteVo note ,ModelAndView mv){
 		
-		System.out.println(note);
-//		int result = service.insertNote(note);
+		System.out.println("note(전) = "+note);
+		int resultSend = service.insertNote(note);
 		
+		System.out.println("note(후) = " + note);
 		
-		System.out.println("도착");
-		Map<String, Object> receive = new HashMap<String, Object>();
-		receive.put("rnNoteFk", note.getSnKey());
+		int resultReceive = service.insertReceiveNote(note);
 		
-		
-		
-		int result = service.insertReceiveNote(note);
-		
-		System.out.println("result = "+result);
+		System.out.println("result = "+resultReceive);
 		mv.setViewName("note/writeNote");
 		
 		return mv;

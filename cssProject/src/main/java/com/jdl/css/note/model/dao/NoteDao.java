@@ -16,10 +16,9 @@ public class NoteDao {
 		return session.insert("NoteMapper.insertNote", note);
 	}
 
-
-
 	public int insertReceiveNote(NoteVo note) {
 		return session.insert("NoteMapper.insertReceiveNote",note);
 	}
+
 
 }

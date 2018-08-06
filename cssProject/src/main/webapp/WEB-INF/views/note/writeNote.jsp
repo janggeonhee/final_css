@@ -18,13 +18,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <script>
   		var names = new Array();
-  	function select(name){
+  		var num = new Array();
+  	function select(no,name){
   		
   		names.push(name);
+  		num.push(no);
   		console.log(names);
+  		console.log(num);
+  		
   		$("#to").val(names.join(", "));
   		
   		$("#receive").val(names);
+  		$("#receiveNo").val(num);
   	}
   </script>
  
@@ -91,10 +96,10 @@ desired effect
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="box-body" onclick="select('1');" style="cursor: pointer;">
+                    <div class="box-body" onclick="select(1,'name1');" style="cursor: pointer;">
                     	test1
                     </div>
-                    <div class="box-body" onclick="select('2');" style="cursor: pointer;">
+                    <div class="box-body" onclick="select(2,'name2');" style="cursor: pointer;">
                     	test2
                     </div>
                   </div>
@@ -143,7 +148,7 @@ desired effect
             <div class="box-body">
             <form action="sendNote.do" method="get">
             	<input type="hidden" value ="${sessionScope.user.eKey}" name="snSenderFk"/>
-            	<input type="hidden" value="" name="receive" id="receive"/>
+            	<input type="hidden" value="" name="receiveNo" id="receiveNo"/>
               <div class="form-group">
                 <input class="form-control" placeholder="To:" id="to"  name="receive">
               </div>

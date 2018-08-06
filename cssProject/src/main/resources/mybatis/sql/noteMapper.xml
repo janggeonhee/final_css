@@ -7,15 +7,18 @@
 		INSERT INTO SENDNOTE VALUES(
     	SEQ_SENDNOTE.NEXTVAL ,#{snSenderFk} ,#{snTitle},#{snContent},SYSDATE,DEFAULT
 		)
+		<selectKey keyProperty="snKey" resultType="Integer" order="AFTER">
+				 SELECT SEQ_SENDNOTE.CURRVAL FROM dual 
+		</selectKey>
 	</insert>
-	<insert id="insertReceiveNote" parameterType="NoteVo">
-		<foreach collection="receive" item="receive">
-			INSERT INTO RECEIVENOTE VALUES(
-			SEQ_RECEIVENOTE.NEXTVAL, #{snKey}, TO_NUMBER(#{receive}),DEFAULT,DEFAULT
-			)
-		</foreach>
-		
 	
+	<insert id="insertReceiveNote" parameterType="NoteVo">
+			INSERT INTO RECEIVENOTE VALUES(
+			SEQ_RECEIVENOTE.NEXTVAL, #{snKey}, #{receiver},DEFAULT,DEFAULT
+			)	
 	</insert>
+	
+	
+	
 
 </mapper>
