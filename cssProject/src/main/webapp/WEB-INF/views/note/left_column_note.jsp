@@ -39,13 +39,23 @@
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
+      <!-- li에 active 클래스 추가시 클릭으로나옴 -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li ><a href="writeNote.do" ><i class="fa fa-link"></i> <span>쪽지작성</span></a></li>
+         <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>수신쪽지함</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">휴지통</a></li>
+          </ul>
+        </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="fa fa-link"></i> <span>보낸쪽지함</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>

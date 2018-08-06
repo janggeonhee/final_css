@@ -23,10 +23,12 @@ public class EmployeeController {
 	@RequestMapping("login.do")
 	public String login(EmployeeVo e,HttpSession session){
 		EmployeeVo user = eService.selectEmployeeById(e.geteId());
-		System.out.println(user);
+//		System.out.println(user);
 		if(user.getePwd().equals(e.getePwd())){
 			session.setAttribute("user", user);
+//			System.out.println("세션 성공" + user);
 		}
 		return "redirect:index.do";
 	}
+
 }
