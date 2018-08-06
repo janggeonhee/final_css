@@ -49,13 +49,12 @@
 							class="fa fa-angle-left pull-right"></i>
 					</span> </a>
 					<ul class="treeview-menu">
-						<li><a href="djqanrldksPage.do">업무기안</a></li>
-						<li><a href="#">경조사휴가계</a></li>
+						<li><a href="jobPropsalPage.do">업무기안</a></li>
 						<li><a href="#">발주서</a></li>
-						<li><a href="#">지출결의서</a></li>
+						<li><a href="spendingResolutionPage.do">지출결의서</a></li>
 						<li><a href="#">출장신청서</a></li>
-						<li><a href="#">품의서</a></li>
-						<li><a href="#">휴가계</a></li>
+						<li><a href="roundRobinPage.do">품의서</a></li>
+						<li><a href="vacationFormPage.do">휴가계</a></li>
 					</ul></li>
 				<li class="header">결재하기</li>
 				<li><a href="#"><i class="fa fa-link"></i> <span>결재대기</span></a></li>

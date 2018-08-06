@@ -70,12 +70,13 @@ desired effect
 						<!-- 3단 레이아웃 멀티클래스 -->
 						<section class="content_wrapper">
 							<!--전자결제 상세-->
-							<div class="report_type approval_type"
-								style="height: 800px; width: 800px; background: white;">
+							<div class="report_type approval_type form_back">
+							
 								<!--전자결재 내용-->
 								<div class="approval_import ie9-scroll-fix">
 									<!-- 문서 내용 표시 테스트 -->
-									<form id="document_content" class="form_doc_editor editor_view" action="writeDjqanrldks.do" method="get">
+									<form id="document_content" class="form_doc_editor editor_view"
+										action="writeDjqanrldks.do" method="get">
 										<span>
 
 											<table
@@ -144,44 +145,39 @@ desired effect
 																</tbody>
 															</table></td>
 														<td>
-															<div style="float: right; margin-right: 15px;">
+															<div class="sign_condition">
 																<span class="sign_type1_inline" data-group-seq="0"
 																	data-group-name="승인" data-group-max-count="1"
 																	data-group-type="type1" data-is-reception=""><span
 																	class="sign_tit_wrap"><span class="sign_tit"><strong>승인</strong></span></span>
-																<!--  -->
-																	<span class="sign_member_wrap" id="activity_15162"><span
+																	<!--  --> <span class="sign_member_wrap"
+																	id="activity_15162"><span class="sign_member"><span
+																			class="sign_rank_wrap"><span class="sign_rank">부장</span></span><span
+																			class="sign_wrap"><span class="sign_name">김지연</span></span><span
+																			class="sign_date_wrap"><span
+																				class="sign_date " id="date_15162"></span></span></span></span> <span
+																	class="sign_member_wrap" id="activity_15162"><span
 																		class="sign_member"><span
 																			class="sign_rank_wrap"><span class="sign_rank">부장</span></span><span
 																			class="sign_wrap"><span class="sign_name">김지연</span></span><span
 																			class="sign_date_wrap"><span
-																				class="sign_date " id="date_15162"></span></span></span></span>
-																				
-																				<span class="sign_member_wrap" id="activity_15162"><span
+																				class="sign_date " id="date_15162"></span></span></span></span> <span
+																	class="sign_member_wrap" id="activity_15162"><span
 																		class="sign_member"><span
 																			class="sign_rank_wrap"><span class="sign_rank">부장</span></span><span
 																			class="sign_wrap"><span class="sign_name">김지연</span></span><span
 																			class="sign_date_wrap"><span
-																				class="sign_date " id="date_15162"></span></span></span></span>
-																				
-																				<span class="sign_member_wrap" id="activity_15162"><span
-																		class="sign_member"><span
-																			class="sign_rank_wrap"><span class="sign_rank">부장</span></span><span
-																			class="sign_wrap"><span class="sign_name">김지연</span></span><span
-																			class="sign_date_wrap"><span
-																				class="sign_date " id="date_15162"></span></span></span></span>
-																<!--  --></span>
+																				class="sign_date " id="date_15162"></span></span></span></span> <!--  --></span>
 
 															</div>
 
-															<div style="float: right; margin-right: 15px;">
+															<div class="sign_condition">
 																<span class="sign_type1_inline" data-group-seq="0"
 																	data-group-name="신청" data-group-max-count="1"
 																	data-group-type="type1" data-is-reception=""><span
 																	class="sign_tit_wrap"><span class="sign_tit"><strong>신청</strong></span></span>
-																<!--  -->
-																	<span class="sign_member_wrap" id="activity_15162"><span
-																		class="sign_member"><span
+																	<!--  --> <span class="sign_member_wrap"
+																	id="activity_15162"><span class="sign_member"><span
 																			class="sign_rank_wrap"><span class="sign_rank">부장</span></span><span
 																			class="sign_wrap"><span class="sign_name">김지연</span></span><span
 																			class="sign_date_wrap"><span
@@ -260,44 +256,21 @@ desired effect
 														<td
 															style="background: rgb(255, 255, 255); border-width: medium 1px 1px; border-style: none solid solid; border-color: currentColor black black; padding: 5px; height: 350px; text-align: left; color: rgb(0, 0, 0); font-size: 14px; font-weight: normal; vertical-align: top;"
 															colspan="4" class=""><textarea
-															data-dsl="{{editor:appContent}}" name="a4"
-															id="appContent" style="width: 100%; min-width: 200px;"
-															data-id="appContent" data-name="appContent"
-															data-require="false" data-maxlength="" data-width=""
-															data-defaultstr="" data-editable="false" data-value=""
-															placeholder="" value="" data-skintype="detail"
-															class="go-editor"></textarea></td>
+																data-dsl="{{editor:appContent}}" name="a4"
+																id="appContent" style="width: 100%; min-width: 200px;"
+																data-id="appContent" data-name="appContent"
+																data-require="false" data-maxlength="" data-width=""
+																data-defaultstr="" data-editable="false" data-value=""
+																placeholder="" value="" data-skintype="detail"
+																class="go-editor"></textarea></td>
 													</tr>
 												</tbody>
 											</table>
-										</span>
-										<input type="submit" value="제출">
+										</span> <input type="submit" value="제출">
 									</form>
 								</div>
-								<div id="attachView" style="display: none;">
-									<div class="add_file" style="display:">
-										<div class="add_file_header">
-											<span class="subject"> <span class="ic ic_file_s"></span>
-												<strong>첨부파일</strong> <span class="num">0</span>개 <span
-												class="size">(0.0Byte)</span>
-											</span>
-										</div>
-										<ul class="file_wrap" id="file_wrap"></ul>
-										<ul class="img_wrap" id="img_wrap"
-											style="margin-bottom: 10px; margin-left: 10px; margin-right: 10px; margin-top: 0px;"></ul>
-									</div>
-								</div>
-								<div id="editView">
-
-									<div class="wrap_attach">
-										<!-- 파일 첨부 스타일  -->
-										<ul class="file_wrap" id="fileWrap"></ul>
-
-										<!-- 이미지 첨부 스타일  -->
-										<ul class="img_wrap" id="imgWrap"></ul>
-									</div>
-
-								</div>
+							
+								
 							</div>
 						</section>
 					</div>

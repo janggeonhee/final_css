@@ -25,9 +25,24 @@ public class ApprovalController {
 		return "approval/approvalPage";
 	}
 	
-	@RequestMapping("djqanrldksPage.do")
-	public String openDjqanrldksPage(){
-		return "approval/approvalForm/djqanrldks";
+	@RequestMapping("jobPropsalPage.do")
+	public String openJobPropsalPage(){
+		return "approval/approvalForm/jobPropsal";
+	}
+	
+	@RequestMapping("vacationFormPage.do")
+	public String openVacationFormPage(){
+		return "approval/approvalForm/vacationForm";
+	}
+	
+	@RequestMapping("roundRobinPage.do")
+	public String openRoundRobinPage(){
+		return "approval/approvalForm/roundRobin";
+	}
+	
+	@RequestMapping("spendingResolutionPage.do")
+	public String openspendingResolutionPage(){
+		return "approval/approvalForm/spendingResolution";
 	}
 	
 	@RequestMapping("selectDraftApprovalList.do")
