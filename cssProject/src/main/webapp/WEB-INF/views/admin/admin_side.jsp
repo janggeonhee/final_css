@@ -53,8 +53,8 @@
 						</span>
 					</a>
 					<ul class="treeview-menu">
-						<li><a href="#">회원목록</a></li>
-						<li><a href="#">회원통계</a></li>
+						<li><a href="memberList.do">회원목록</a></li>
+						<li><a href="#">회원설정</a></li>
 					</ul>
 				</li>
 				<li><a href="#"><i class="fa fa-question"></i> <span>문의사항</span></a></li>
